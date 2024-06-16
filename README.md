@@ -1,73 +1,25 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Projeto de Estudo: Aplicação NestJS com Estrutura Multitenancy
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este projeto é uma aplicação de estudo desenvolvida com NestJS, com o objetivo de explorar e demonstrar o conceito de multitenancy (multi-inquilino). Utilizando Docker para facilitar a configuração e a execução do ambiente, esta aplicação ilustra como gerenciar múltiplos clientes (tenants) de forma isolada dentro de um único ambiente.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Objetivo
 
-## Description
+O objetivo deste projeto é estudar e entender como implementar uma arquitetura multitenancy em uma aplicação NestJS. Multitenancy é uma abordagem que permite que uma única instância de software sirva múltiplos clientes, ou tenants, garantindo que cada um tenha um ambiente de dados isolado e seguro.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Estrutura Multitenancy
 
-## Installation
+### Definição
 
-```bash
-$ npm install
-```
+Multitenancy é um modelo de arquitetura onde uma única instância de software atende a vários clientes (tenants). Cada tenant é isolado, com seus próprios dados e configuração, enquanto compartilha a mesma aplicação e recursos de infraestrutura.
 
-## Running the app
+### Modelos de Implementação
 
-```bash
-# development
-$ npm run start
+Existem diversos modelos para implementar multitenancy, entre eles:
 
-# watch mode
-$ npm run start:dev
+1. **Banco de Dados Compartilhado, Esquema Compartilhado**: Todos os tenants compartilham o mesmo banco de dados e tabelas, com dados segregados por colunas de identificação de tenant.
+2. **Banco de Dados Compartilhado, Esquema Dedicado**: Todos os tenants compartilham o mesmo banco de dados, mas possuem tabelas dedicadas.
+3. **Banco de Dados Dedicado**: Cada tenant possui seu próprio banco de dados, oferecendo o maior nível de isolamento.
 
-# production mode
-$ npm run start:prod
-```
+### Modelo Utilizado no Projeto
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Neste projeto, utilizamos o modelo de **Banco de Dados Compartilhado, Esquema Compartilhado**. Essa abordagem simplifica a gestão de dados ao mesmo tempo que proporciona isolamento e segurança para os dados de cada tenant.
