@@ -4,8 +4,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "macaco",
-    "email": "macaco@favela.com",
+    "name": "cocao",
+    "email": "cocao@favela.com",
     "passwd": "123456"
 }
 
@@ -14,8 +14,8 @@ POST http://localhost:3000/partners/users
 Content-Type: application/json
 
 {
-    "name": "junin",
-    "email": "junin@favela.com",
+    "name": "difrente",
+    "email": "difrentefavela.com",
     "passwd": "123456"
 }
 
@@ -24,20 +24,35 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "name": "junin",
-    "email": "junin@favela.com",
+    "name": "difrente",
+    "email": "difrentefavela.com",
     "passwd": "123456"
 }
 
 ### Partners
 POST http://localhost:3000/partners
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Imp1bmluIiwiZW1haWwiOiJqdW5pbkBmYXZlbGEuY29tIiwicm9sZXMiOlsiUEFSVE5FUiJdLCJjcmVhdGVBdCI6IjIwMjQtMDYtMTdUMDE6MDU6MTUuMjY1WiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0xN1QwMTowNToxNS4yNjVaIiwiaWF0IjoxNzE4NTg2MzIxLCJleHAiOjE3MTg1OTYzMjF9.x17lhkJoMFMeGjAyUcZdULdOvi4AllluJKYJ8Wzbkfg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImRpZnJlbnRlIiwiZW1haWwiOiJkaWZyZW50ZWZhdmVsYS5jb20iLCJyb2xlcyI6WyJQQVJUTkVSIl0sImNyZWF0ZUF0IjoiMjAyNC0wNi0xN1QxMjoxMTo1NC4wMThaIiwidXBkYXRlQXQiOiIyMDI0LTA2LTE3VDEyOjExOjU0LjAxOFoiLCJpYXQiOjE3MTg2MjYzNjgsImV4cCI6MTcxODYzNjM2OH0.NpujVWzy3FGn8Ujijd1AbsC-R5MTfxTRDEbSAdAiXOc
 
 {
-    "name": "1"
+    "name": "parter 3"
 }
 
 ### Partners
 GET http://localhost:3000/partners
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Imp1bmluIiwiZW1haWwiOiJqdW5pbkBmYXZlbGEuY29tIiwicm9sZXMiOlsiUEFSVE5FUiJdLCJjcmVhdGVBdCI6IjIwMjQtMDYtMTdUMDE6MDU6MTUuMjY1WiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0xN1QwMTowNToxNS4yNjVaIiwiaWF0IjoxNzE4NTg2MzIxLCJleHAiOjE3MTg1OTYzMjF9.x17lhkJoMFMeGjAyUcZdULdOvi4AllluJKYJ8Wzbkfg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImRpZnJlbnRlIiwiZW1haWwiOiJkaWZyZW50ZWZhdmVsYS5jb20iLCJyb2xlcyI6WyJQQVJUTkVSIl0sImNyZWF0ZUF0IjoiMjAyNC0wNi0xN1QxMjoxMTo1NC4wMThaIiwidXBkYXRlQXQiOiIyMDI0LTA2LTE3VDEyOjExOjU0LjAxOFoiLCJpYXQiOjE3MTg2MjYzNjgsImV4cCI6MTcxODYzNjM2OH0.NpujVWzy3FGn8Ujijd1AbsC-R5MTfxTRDEbSAdAiXOc
+
+### Events
+POST http://localhost:3000/events
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImRpZnJlbnRlIiwiZW1haWwiOiJkaWZyZW50ZWZhdmVsYS5jb20iLCJyb2xlcyI6WyJQQVJUTkVSIl0sImNyZWF0ZUF0IjoiMjAyNC0wNi0xN1QxMjoxMTo1NC4wMThaIiwidXBkYXRlQXQiOiIyMDI0LTA2LTE3VDEyOjExOjU0LjAxOFoiLCJpYXQiOjE3MTg2MjYzNjgsImV4cCI6MTcxODYzNjM2OH0.NpujVWzy3FGn8Ujijd1AbsC-R5MTfxTRDEbSAdAiXOc
+Content-Type: application/json
+
+{
+    "name": "segundo evento",
+    "description": "Fe difrente",
+    "date": "2024-06-12T23:21:34.60"
+}
+
+### Events
+GET http://localhost:3000/events
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImRpZnJlbnRlIiwiZW1haWwiOiJkaWZyZW50ZWZhdmVsYS5jb20iLCJyb2xlcyI6WyJQQVJUTkVSIl0sImNyZWF0ZUF0IjoiMjAyNC0wNi0xN1QxMjoxMTo1NC4wMThaIiwidXBkYXRlQXQiOiIyMDI0LTA2LTE3VDEyOjExOjU0LjAxOFoiLCJpYXQiOjE3MTg2MjYzNjgsImV4cCI6MTcxODYzNjM2OH0.NpujVWzy3FGn8Ujijd1AbsC-R5MTfxTRDEbSAdAiXOc

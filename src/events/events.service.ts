@@ -22,4 +22,12 @@ export class EventsService {
       },
     });
   }
+
+  findAll() {
+    return this.prismaService.event.findMany({
+      where: {
+        partnerId: this.tenantService.getTenant().id,
+      },
+    });
+  }
 }
