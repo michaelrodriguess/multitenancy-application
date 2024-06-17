@@ -28,3 +28,16 @@ Content-Type: application/json
     "email": "junin@favela.com",
     "passwd": "123456"
 }
+
+### Partners
+POST http://localhost:3000/partners
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Imp1bmluIiwiZW1haWwiOiJqdW5pbkBmYXZlbGEuY29tIiwicm9sZXMiOlsiUEFSVE5FUiJdLCJjcmVhdGVBdCI6IjIwMjQtMDYtMTdUMDE6MDU6MTUuMjY1WiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0xN1QwMTowNToxNS4yNjVaIiwiaWF0IjoxNzE4NTg2MzIxLCJleHAiOjE3MTg1OTYzMjF9.x17lhkJoMFMeGjAyUcZdULdOvi4AllluJKYJ8Wzbkfg
+
+{
+    "name": "1"
+}
+
+### Partners
+GET http://localhost:3000/partners
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Imp1bmluIiwiZW1haWwiOiJqdW5pbkBmYXZlbGEuY29tIiwicm9sZXMiOlsiUEFSVE5FUiJdLCJjcmVhdGVBdCI6IjIwMjQtMDYtMTdUMDE6MDU6MTUuMjY1WiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0xN1QwMTowNToxNS4yNjVaIiwiaWF0IjoxNzE4NTg2MzIxLCJleHAiOjE3MTg1OTYzMjF9.x17lhkJoMFMeGjAyUcZdULdOvi4AllluJKYJ8Wzbkfg
