@@ -15,6 +15,27 @@ model User {
   roles Json
   createAt DateTime @default(now())
   updateAt DateTime @default(now())
+  partnerUsers PartnerUser[]
   
   @@unique([email])
+}
+
+model Partner {
+  id Int @id @default(autoincrement())
+  name String
+  createdAt DateTime @default(now())
+  updateAt DateTime @default(now())
+  PartnerUser PartnerUser[]
+}
+
+model PartnerUser {
+  id Int @id @default(autoincrement())
+  partnerId Int 
+  userId Int
+  Partner Partner @relation(fields: [partnerId], references: [id])
+  User User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@unique([userId])
 }
