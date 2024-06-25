@@ -1,25 +1,29 @@
-# Projeto de Estudo: Aplicação NestJS com Estrutura Multitenancy
+# Study Project: NestJS Application with Multitenancy Structure
 
-Este projeto é uma aplicação de estudo desenvolvida com NestJS, com o objetivo de explorar e demonstrar o conceito de multitenancy (multi-inquilino). Utilizando Docker para facilitar a configuração e a execução do ambiente, esta aplicação ilustra como gerenciar múltiplos clientes (tenants) de forma isolada dentro de um único ambiente.
+This project is a study application developed with NestJS, with the aim of exploring and demonstrating the concept of multitenancy. Using Docker to facilitate the configuration and execution of the environment, this application illustrates how to manage multiple clients (tenants) in isolation within a single environment.
 
-## Objetivo
+## Objective
 
-O objetivo deste projeto é estudar e entender como implementar uma arquitetura multitenancy em uma aplicação NestJS. Multitenancy é uma abordagem que permite que uma única instância de software sirva múltiplos clientes, ou tenants, garantindo que cada um tenha um ambiente de dados isolado e seguro.
+The aim of this project is to study and understand how to implement a multitenancy architecture in a NestJS application. Multitenancy is an approach that allows a single instance of software to serve multiple clients, or tenants, ensuring that each one has an isolated and secure data environment.
 
-## Estrutura Multitenancy
+## Multitenancy structure
 
-### Definição
+### Definition
 
-Multitenancy é um modelo de arquitetura onde uma única instância de software atende a vários clientes (tenants). Cada tenant é isolado, com seus próprios dados e configuração, enquanto compartilha a mesma aplicação e recursos de infraestrutura.
+Multitenancy is an architectural model where a single instance of software serves several clients (tenants). Each tenant is isolated, with its own data and configuration, while sharing the same application and infrastructure resources.
 
-### Modelos de Implementação
+### Implementation Models
 
-Existem diversos modelos para implementar multitenancy, entre eles:
+There are several models for implementing multitenancy, including:
 
-1. **Banco de Dados Compartilhado, Esquema Compartilhado**: Todos os tenants compartilham o mesmo banco de dados e tabelas, com dados segregados por colunas de identificação de tenant.
-2. **Banco de Dados Compartilhado, Esquema Dedicado**: Todos os tenants compartilham o mesmo banco de dados, mas possuem tabelas dedicadas.
-3. **Banco de Dados Dedicado**: Cada tenant possui seu próprio banco de dados, oferecendo o maior nível de isolamento.
+1. **Shared Database, Shared Schema**: All tenants share the same database and tables, with data segregated by tenant ID columns.
+2. **Shared Database, Dedicated Schema**: All tenants share the same database, but have dedicated tables.
+3. **Dedicated Database: Each tenant has its own database, offering the greatest level of isolation.
 
-### Modelo Utilizado no Projeto
+### Model Used in the Project
 
-Neste projeto, utilizamos o modelo de **Banco de Dados Compartilhado, Esquema Compartilhado**. Essa abordagem simplifica a gestão de dados ao mesmo tempo que proporciona isolamento e segurança para os dados de cada tenant.
+In this project, we used the Shared Database, Shared Schema model. This approach simplifies data management while providing isolation and security for each tenant's data.
+
+## Authentication
+
+To manage user authentication, this project uses concepts such as NestJS Guards and Interceptors. Authentication is implemented using JSON Web Tokens (JWT), ensuring that only authenticated users can access specific resources. Guards check the validity of the token and Interceptors help identify users from the token provided.
